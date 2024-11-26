@@ -649,9 +649,29 @@ def generate_result_latex_nplm(results_df, times_df, title):
     string = string.replace("NaN","-")
     return string
 
+# def save_latex(string, model_dir):
+#     # Define the filename for the output .tex file
+#     filename = os.path.join(model_dir,'results_table.tex')
+
+#     # Write the LaTeX table code to the .tex file
+#     with open(filename, 'w') as file:
+#         file.write(string)
+
+#     print(f"LaTeX table code has been written to {filename}")
+
 def save_latex(string, model_dir):
     # Define the filename for the output .tex file
-    filename = os.path.join(model_dir,'results_table.tex')
+    filename = os.path.join(model_dir,'results_table_prova.tex')
+
+    # Write the LaTeX table code to the .tex file
+    with open(filename, 'w') as file:
+        file.write(string)
+
+    print(f"LaTeX table code has been written to {filename}")
+
+def save_update_latex(string, model_dir):
+    # Define the filename for the output .tex file
+    filename = os.path.join(model_dir,'results_table_updated.tex')
 
     # Write the LaTeX table code to the .tex file
     with open(filename, 'w') as file:
