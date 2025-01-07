@@ -539,6 +539,16 @@ def save_update_latex(string, model_dir):
 
     print(f"LaTeX table code has been written to {filename}")
 
+def save_latex_nplm(string, model_dir, name):
+    # Define the filename for the output .tex file
+    filename = os.path.join(model_dir,name)
+
+    # Write the LaTeX table code to the .tex file
+    with open(filename, 'w') as file:
+        file.write(string)
+
+    print(f"LaTeX table code has been written to {filename}")
+
 def generate_result_latex_nplm(results_df, times_df, title):
     # Table with 2 sub-tables
     [results_df_mean, results_df_cov_diag, results_df_cov_off_diag, results_df_power_abs_up, results_df_power_abs_down, results_df_random_normal, results_df_random_uniform] = get_individual_dfs_nplm(results_df, show=False)
